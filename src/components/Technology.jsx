@@ -1,7 +1,7 @@
 import vehicle from "../assets/technology/image-launch-vehicle-portrait.jpg"
 import spaceport from "../assets/technology/image-spaceport-portrait.jpg"
 import capsule from "../assets/technology/image-space-capsule-portrait.jpg"
-import vehicleLandscape from "../assets/technology/image-spaceport-landscape.jpg"
+import vehicleLandscape from "../assets/technology/image-launch-vehicle-landscape.jpg"
 import spaceportLandscape from "../assets/technology/image-spaceport-landscape.jpg"
 import capsuleLandscape from "../assets/technology/image-space-capsule-landscape.jpg"
 import {useState} from 'react'
@@ -49,13 +49,13 @@ const Technology =()=> {
     }
 
     return (
-        <div>
+        <div className="technology">
             <div className="heading-5 title"><span className="number">03 </span><span>SPACE LAUNCH 101</span></div>
             <div className="technology-main">
                 <div className="landscape-image">
-                    <img src={tech[0].name==='Launch vehicle'? vehicle:
-                    tech[0].name==='Spaceport'? spaceport:
-                    tech[0].name==="Space capsule"? capsule: null} alt='techpic' />
+                    <img src={tech[0].name==='Launch vehicle'? vehicleLandscape:
+                    tech[0].name==='Spaceport'? spaceportLandscape :
+                    tech[0].name==="Space capsule"? capsuleLandscape: null} alt='techpic' />
                 </div>
                 <div className="inner-flex">
                     <div className="circles-container">

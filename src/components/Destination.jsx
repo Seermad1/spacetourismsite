@@ -67,7 +67,7 @@ const Destination =()=> {
         }
 
     return (
-        <div>
+        <div className='destination'>
             <div className="heading-5 title"><span className="number">01 </span><span>PICK YOUR DESTINATION</span></div>
         
         <div className='destination-main'>
@@ -79,13 +79,13 @@ const Destination =()=> {
             </div>
             <div className='grid-2'>
                 <div className='inner-nav'>
-                    <div id='Moon' className='nav-text i active' onClick={changeActiveState}>moon</div>
-                    <div id='Mars' className='nav-text i' onClick={changeActiveState}>mars</div>
-                    <div id='Europa' className='nav-text i' onClick={changeActiveState}>europa</div>
-                    <div id='Titan' className='nav-text i' onClick={changeActiveState}>titan</div>
+                    <div id='Moon' className='i active' onClick={changeActiveState}>MOON</div>
+                    <div id='Mars' className='i' onClick={changeActiveState}>MARS</div>
+                    <div id='Europa' className='i' onClick={changeActiveState}>EUROPA</div>
+                    <div id='Titan' className='i' onClick={changeActiveState}>TITAN</div>
                 </div>
                 <div className='heading-3'>{destination[0].name}</div>
-                <div>{destination[0].description}</div>
+                <div className='destination-description'>{destination[0].description}</div>
                 <div className='separator'></div>
                 <div className='bottom-flex'>
                     <div>

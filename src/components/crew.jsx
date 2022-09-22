@@ -60,7 +60,7 @@ const Crew =()=> {
     }
 
     return (
-        <div>
+        <div className='crew'>
             <div className="heading-5 title"><span className="number">02 </span><span>MEET YOUR CREW</span></div>
         
         <div className='destination-main crew-main'>
