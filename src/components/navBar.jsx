@@ -4,6 +4,7 @@ import Logo from '../assets/shared/logo.svg'
 
 const  Nav =()=>{
 
+
     function changeActive(event){
         
         function remove(){
@@ -11,8 +12,9 @@ const  Nav =()=>{
         }
         remove()
         event.currentTarget.classList.add('active')
+        
     }
-
+    ;
     return (
     <header>
         <nav className='nav'>
