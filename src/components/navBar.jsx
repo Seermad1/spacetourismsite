@@ -1,8 +1,13 @@
 import {Link} from 'react-router-dom'
+import { useState } from 'react'
 import Logo from '../assets/shared/logo.svg'
+import hamburger from '../assets/shared/icon-hamburger.svg'
+import iconClose from '../assets/shared/icon-close.svg'
 
 
 const  Nav =()=>{
+
+    const [showMobile, setShowMobile] = useState(false)
 
 
     function changeActive(event){
@@ -12,7 +17,7 @@ const  Nav =()=>{
         }
         remove()
         event.currentTarget.classList.add('active')
-        
+        setShowMobile(false)
     }
     ;
     return (
@@ -25,14 +30,19 @@ const  Nav =()=>{
 
             </div>
     
-            <input type='checkbox' id='checkbox' />
+            <div className='mobile-menu' onClick={()=>{setShowMobile(!showMobile)}}>
+                {showMobile? <img src={iconClose} alt='close' />: <img src={hamburger} alt='open' />}
+            </div>
+
+            {/* CHECKBOX NAVBAR HACK */}
+            {/* <input type='checkbox' id='checkbox' />
             <label htmlFor='checkbox' className='toggle'>
                 <div className='ham-line'></div>
                 <div className='ham-line'></div>
                 <div className='ham-line'></div>
-            </label>
+            </label> */}
         
-            <div className='nav-items'>
+            <div className={showMobile? 'nav-items mobile-nav-items': 'nav-items'}>
                 <div className='links'>
                     <Link className='nav-text  active' to='/' onClick={changeActive}>
                     <span className='nav-number'>00</span><span className="nav-item"> HOME</span>

@@ -23,13 +23,8 @@ function App() {
 
 
   const getBackgroundSize = (width) =>{
-    if(width > 1036){
-      return 'desktop'
-    }else if(width > 700){
-      return 'tablet'
-    }else{
-      return 'mobile'
-    }
+    const background = width > 1036 ? 'desktop': width > 700? 'tablet': 'mobile'
+    return background
   }
 
   const currentDevice = getBackgroundSize(windowSize)
@@ -39,17 +34,14 @@ function App() {
 
  
   window.addEventListener('resize', ()=>{
-    const viewPortWidth = window.innerWidth;
+    const viewPortWidth = getWindowSize ()
     const currentDevice = getBackgroundSize( viewPortWidth )
     const currentRoute = location === '/'? 'home': location === '/destination'? 'destination': 
                       location === '/crew'? 'crew': location === '/technology'? 'technology': null
-    
-
     const image  = `/assets/${currentRoute}/background-${currentRoute}-${currentDevice}.jpg`
     
     const body = document.getElementById('body')
     body.style.backgroundImage = `url(${image})`
-
   } )
 
   return (
