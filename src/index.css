@@ -72,7 +72,7 @@ a{
   transition: all .3s ease;
   padding-right: 1rem;
 }
-.toggle, #checkbox{
+.mobile-menu{
   display: none;
 }
 .nav-number{
@@ -106,16 +106,22 @@ a{
   border-bottom: 2px solid var(--hover-color);
   color: var(--hover-color);
 }
-.ham-line{
+.active{
+  border-bottom: 2px solid #ffffff;
+  color: var(--white-text-color);
+}
+
+/* CHECKBOX NAVBAR HACK */
+/* .ham-line{
   width: 20px;
   height: 2px;
   background-color: var(--white-text-color);
   margin-bottom: 4px;
 }
-.active{
-  border-bottom: 2px solid #ffffff;
-  color: var(--white-text-color);
-}
+.toggle, #checkbox{
+  display: none;
+} */
+
 @media  screen and (max-width: 1036px){
   .logo{
     margin-top: 1.2rem;
@@ -140,7 +146,7 @@ a{
   .nav-items{
     position: absolute;
     width: 250px;
-    min-height: 100%;
+    min-height: 100vh;
     top: 0;
     right: 0;
     display: none;
@@ -148,6 +154,9 @@ a{
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(15px);
+  }
+  .mobile-nav-items{
+    display: block;
   }
   .nav-text{
     margin: 0;
@@ -166,7 +175,7 @@ a{
     transition: all .3s ease;
     padding: 1rem 0;
   }
-  .toggle{
+  .mobile-menu{
     display: block;
     margin-top: 2rem;
     margin-right: 2rem;
@@ -176,7 +185,15 @@ a{
   .nav-number{
     display: inline-block;
   }
-  #checkbox:checked ~ .nav-items{
+  /* CHECKBOX NAVBAR HACK */
+  /* .toggle{
+    display: block;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    z-index: 1001;
+    transition: transform 0.5s ease;
+  } */
+  /* #checkbox:checked ~ .nav-items{
     display: block;
   }
   #checkbox:checked ~ .toggle .ham-line:nth-child(1){
@@ -187,7 +204,7 @@ a{
   }
   #checkbox:checked ~ .toggle .ham-line:nth-child(2){
     opacity: 0;
-  }
+  } */
 }
 
 /* End of navbar style   */
